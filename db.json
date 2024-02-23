@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": "87",
+      "username": "marcolindemort",
+      "email": "provamail@gmail.com",
+      "password": "prova"
+    },
+    {
+      "id": "781",
+      "username": "prova",
+      "email": "prova@gmail.com",
+      "password": "prova"
+    },
+    {
+      "id": "839",
+      "username": "redux",
+      "email": "redux@gmail.com",
+      "password": "redux"
+    },
+    {
+      "id": "316",
+      "username": "prova2",
+      "email": "prova@gmail.it",
+      "password": "test"
+    },
+    {
+      "id": "177",
+      "username": "provaredux",
+      "email": "prova@gmail.com",
+      "password": "test"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "494c",
+      "gameid": 29593,
+      "user": "marcolindemort",
+      "userid": "87",
+      "review": "recensione di un altro utente",
+      "vote": 5
+    },
+    {
+      "id": "6768",
+      "gameid": 29593,
+      "user": "prova",
+      "userid": "781",
+      "review": "questa recensione è inutile",
+      "vote": 8
+    }
+  ],
+  "favorites": []
+}
