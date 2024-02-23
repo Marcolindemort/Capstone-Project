@@ -8,16 +8,15 @@ const Searchresults = () => {
 
 	return (
 		<>
-			<Row xs={1} sm={5} className="my-4">
+			<Row className="my-4 justify-content-center">
 				{collection &&
 					gamesResults &&
 					gamesResults.map((game) => (
-						<Col key={game.id}>
-							<Card className="bg-dark white mb-3">
+						<Col xs={10} md={6} lg={4} xl={3} key={game.id}>
+							<Card className="bg-dark white mb-5 border-card-orange overflow-hidden">
 								<Card.Img variant="top" src={game.background_image} className="card-pic" />
 								<Card.Body>
 									<Card.Title className="line-clamp">{game.name}</Card.Title>
-									{game.name.length < 20 && <Card.Text className="m-0">&nbsp;</Card.Text>}
 									<Card.Text>
 										<span>{game.released}</span>
 									</Card.Text>

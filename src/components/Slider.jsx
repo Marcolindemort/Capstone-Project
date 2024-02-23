@@ -32,36 +32,36 @@ const Slider = () => {
 	}, [games]);
 
 	return (
-		<div className="d-flex justify-content-center mt-5">
-			<div className="">
-				{games &&
-					games.map((game, index) => (
-						<div key={game.id}>
-							{index === gameIndex && (
-								<Row
-									className={
-										index === gameIndex
-											? "content-slide active justify-content-center"
-											: "content-slide justify-content-center"
-									}>
-									<Col xs={4} className="p-0">
-										<Link to={`/details/${game.slug}`} className="p-0">
-											<img
-												src={game.background_image}
-												alt="game pic"
-												className="rounded-3"
-												width={"100%"}
-												style={{ aspectRatio: "1/0.6", objectFit: "cover" }}
-											/>
-											{/* <p className="fw-bold orange archive-sm">{game.name}</p> */}
-										</Link>
-									</Col>
-								</Row>
-							)}
-						</div>
-					))}
-			</div>
-		</div>
+		<>
+			{games &&
+				games.map((game, index) => (
+					<div key={game.id} className="mt-5">
+						{index === gameIndex && (
+							<Row
+								className={
+									index === gameIndex
+										? "content-slide active justify-content-center"
+										: "content-slide justify-content-center"
+								}>
+								<Col xs={5} className="p-0">
+									<Link to={`/details/${game.slug}`} className="p-0">
+										<img
+											src={game.background_image}
+											alt="game pic"
+											className="rounded-3 border-orange"
+											width={"100%"}
+											style={{ aspectRatio: "1/0.6", objectFit: "cover" }}
+										/>
+										<Col className="d-none d-lg-block">
+											<p className="fw-bold orange archive-sm shadow">{game.name}</p>
+										</Col>
+									</Link>
+								</Col>
+							</Row>
+						)}
+					</div>
+				))}
+		</>
 	);
 };
 

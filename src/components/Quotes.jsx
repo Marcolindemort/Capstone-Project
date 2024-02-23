@@ -25,7 +25,7 @@ const Quotes = () => {
 	return (
 		<Container>
 			<Row className="justify-content-center">
-				<Col xs={4}>
+				<Col xs={10}>
 					<p className="m-0">"{quotes.quote}"</p>
 					<span>
 						{quotes.character} - {quotes.title}

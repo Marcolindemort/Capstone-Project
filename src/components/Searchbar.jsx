@@ -64,9 +64,9 @@ const Searchbar = () => {
 	return (
 		<>
 			<Row className="justify-content-end">
-				<Col xs={6} className="">
+				<Col xs={11} lg={6}>
 					<InputGroup className="my-3 me-3 d-flex justify-content-center">
-						<DropdownButton variant="outline-secondary" title={filterBy} id="input-group-dropdown-1">
+						<DropdownButton variant="dark" title={filterBy} id="input-group-dropdown-1" className="border-orange">
 							<Dropdown.Item onClick={() => setFilterBy("Titolo")}>Titolo</Dropdown.Item>
 							<Dropdown.Item onClick={() => setFilterBy("Genere")}>Genere</Dropdown.Item>
 							<Dropdown.Item onClick={() => setFilterBy("Sviluppatore")}>Sviluppatore</Dropdown.Item>
@@ -78,6 +78,7 @@ const Searchbar = () => {
 								value={value}
 								onChange={(e) => setValue(e.target.value)}
 								placeholder="Cerca nell'archivio"
+								className="rounded-start-0"
 							/>
 							<button className="orange archive-sm ms-2 border-orange" type="submit">
 								Cerca
@@ -85,9 +86,9 @@ const Searchbar = () => {
 						</Form>
 					</InputGroup>
 				</Col>
-				<Col xs={3} className="d-flex justify-content-evenly align-items-center">
+				<Col xs={0} lg={3} className="d-flex justify-content-center align-items-center">
 					<Link to="/" className="orange">
-						<FontAwesomeIcon icon={faHouse} size="xl" />
+						<FontAwesomeIcon icon={faHouse} size="xl" className="me-5" />
 					</Link>
 					<OverlayTrigger
 						trigger="click"

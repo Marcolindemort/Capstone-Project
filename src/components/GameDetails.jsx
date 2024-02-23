@@ -21,16 +21,16 @@ const GameDetails = () => {
 	return (
 		<>
 			{game && (
-				<Row className="justify-content-center mt-5 bg-dark rounded-3">
-					<Col xs={4} className=" p-0 rounded-3">
+				<Row className=" align-items-center align-items-lg-start mt-5 rounded-3 flex-column flex-lg-row flex-nowrap justify-content-lg-center bg-md-dark">
+					<Col xs={10} lg={4} className="p-0 rounded-3">
 						<img src={game.background_image} alt="game pic" className="rounded-start-3 card-pic" />
 					</Col>
-					<Col xs={8} className="p-0">
-						<Tabs id="controlled-tab" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3 archive-sm">
+					<Col xs={10} lg={8} className="p-0 bg-dark">
+						<Tabs id="controlled-tab" activeKey={key} onSelect={(k) => setKey(k)} className="archive-sm">
 							<Tab eventKey="info" title="INFO" className="text-start">
 								<Container>
 									<Row>
-										<Col className="p-3">
+										<Col xs={6} className="p-3">
 											<p>
 												<span className="fst-italic fw-bold orange">Titolo: </span>
 												{game.name}
@@ -65,7 +65,7 @@ const GameDetails = () => {
 											</div>
 										</Col>
 
-										<Col className="p-3">
+										<Col xs={6} className="p-3">
 											<p>
 												<span className="fst-italic fw-bold orange">Data di uscita: </span>
 												{game.released}
