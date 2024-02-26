@@ -2,7 +2,7 @@
   "users": [
     {
       "id": "87",
-      "username": "marcolindemort",
+      "username": "marco",
       "email": "provamail@gmail.com",
       "password": "prova"
     },
@@ -35,7 +35,7 @@
     {
       "id": "494c",
       "gameid": 29593,
-      "user": "marcolindemort",
+      "user": "marco",
       "userid": "87",
       "review": "recensione di un altro utente",
       "vote": 5
@@ -45,7 +45,7 @@
       "gameid": 29593,
       "user": "prova",
       "userid": "781",
-      "review": "questa recensione è inutile",
+      "review": "questa recensione è inutile per ora o forse ancora sì",
       "vote": 8
     }
   ],

@@ -1,6 +1,8 @@
 import { Button, Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import profilo from "../media/profilo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBan, faFloppyDisk, faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const SingleComment = ({ comment, user, fetchComments }) => {
 	const [editedComment, setEditedComment] = useState(comment.review);
@@ -39,11 +41,46 @@ const SingleComment = ({ comment, user, fetchComments }) => {
 
 	return (
 		<Row className="justify-content-center align-items-center mb-5">
-			<Col xs={1} className="d-flex flex-column align-items-center me-5">
+			<Col xs={2} lg={1} className="d-flex flex-column align-items-center">
 				<img src={profilo} alt="profile pic" width={50} height={50} />
 				<span className="orange archive-sm">{comment.user}</span>
 			</Col>
-			<Col xs={6} className="bg-dark rounded-5 p-4 text-start me-2 d-flex flex-column">
+			<Col xs={6} className="bg-dark rounded-5 p-4 align-items-start me-2 d-flex flex-column">
+				{user && user.id === comment.userid && (
+					<>
+						{isEditing ? (
+							<div>
+								<FontAwesomeIcon
+									icon={faFloppyDisk}
+									onClick={handleEdit}
+									style={{ color: "#f78528" }}
+									className="pointer me-2"
+								/>
+								<FontAwesomeIcon
+									icon={faBan}
+									onClick={() => setIsEditing(false)}
+									style={{ color: "#f78528" }}
+									className="pointer ms-3"
+								/>
+							</div>
+						) : (
+							<div>
+								<FontAwesomeIcon
+									icon={faPencil}
+									onClick={() => setIsEditing(true)}
+									style={{ color: "#f78528" }}
+									className="pointer me-3"
+								/>
+								<FontAwesomeIcon
+									icon={faTrashCan}
+									onClick={handleDelete}
+									style={{ color: "#f78528" }}
+									className="pointer ms-2"
+								/>
+							</div>
+						)}
+					</>
+				)}
 				{isEditing ? (
 					<textarea
 						value={editedComment}
@@ -54,31 +91,8 @@ const SingleComment = ({ comment, user, fetchComments }) => {
 					<p className="m-0">{comment.review}</p>
 				)}
 			</Col>
-			<Col xs={1} className="d-flex">
+			<Col xs={2} lg={1} className="d-flex">
 				<span className="orange archive-sm">Voto: {comment.vote}</span>
-				{user && user.id === comment.userid && (
-					<>
-						{isEditing ? (
-							<>
-								<button className="orange archive-sm border-orange" onClick={handleEdit}>
-									Salva
-								</button>
-								<button className="orange archive-sm border-orange" onClick={() => setIsEditing(false)}>
-									Annulla
-								</button>
-							</>
-						) : (
-							<>
-								<button className="orange archive-sm border-orange" onClick={() => setIsEditing(true)}>
-									Modifica
-								</button>
-								<button className="orange archive-sm border-orange" variant="danger" onClick={handleDelete}>
-									Elimina
-								</button>
-							</>
-						)}
-					</>
-				)}
 			</Col>
 		</Row>
 	);

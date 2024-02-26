@@ -1,10 +1,18 @@
-import { Button, Card, Col, Row } from "react-bootstrap";
+import { Card, Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Searchresults = () => {
 	const collection = useSelector((state) => state.games.collection);
 	const gamesResults = useSelector((state) => state.games.collection.results);
+
+	const reverseDate = (date) => {
+		if (collection && gamesResults) {
+			if (!date) return "";
+			const parts = date.split("-");
+			return parts.reverse().join("-");
+		}
+	};
 
 	return (
 		<>
@@ -18,8 +26,30 @@ const Searchresults = () => {
 								<Card.Body>
 									<Card.Title className="line-clamp">{game.name}</Card.Title>
 									<Card.Text>
-										<span>{game.released}</span>
+										{game.released ? (
+											<span className="orange">
+												Uscita: <span className="white">{reverseDate(game.released)}</span>
+											</span>
+										) : (
+											<span className="orange">
+												Uscita: <span className="white">non disponibile</span>
+											</span>
+										)}
+										<br></br>
+										<span className="orange">
+											Genere:
+											<span className="white justify-content-center">
+												{game.genres.length >= 1 ? (
+													game.genres
+														.filter((genre, index) => index < 3)
+														.map((genre, index) => <span key={index}>&nbsp;{genre.name}</span>)
+												) : (
+													<span>&nbsp;non disponibile</span>
+												)}
+											</span>
+										</span>
 									</Card.Text>
+
 									<Link to={`/details/${game.slug}`}>
 										<button className="orange archive-sm border-orange">Dettagli</button>
 									</Link>

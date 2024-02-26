@@ -24,7 +24,7 @@ const ScreenshotCarousel = ({ gameId }) => {
 	}, [gameId]);
 
 	return (
-		<div>
+		<div className="my-3">
 			<Carousel touch={true} interval={null} slide={false} indicators={false}>
 				{screenshot &&
 					screenshot.map((screen) => (

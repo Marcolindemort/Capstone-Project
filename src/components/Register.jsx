@@ -62,7 +62,7 @@ const Register = ({ handleCloseReg, show }) => {
 					</Form.Group>
 					<div className="d-flex justify-content-end">
 						<button className="orange archive-sm border-orange" type="submit">
-							Registrati
+							REGISTRATI
 						</button>
 					</div>
 				</Form>

@@ -1,3 +1,5 @@
+import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
@@ -26,9 +28,13 @@ const Quotes = () => {
 		<Container>
 			<Row className="justify-content-center">
 				<Col xs={10}>
-					<p className="m-0">"{quotes.quote}"</p>
-					<span>
-						{quotes.character} - {quotes.title}
+					<p className="m-0 fs-3 fst-italic">
+						<FontAwesomeIcon icon={faQuoteLeft} style={{ color: "#f78528" }} size="xl" />
+						&nbsp;{quotes.quote}&nbsp;
+						<FontAwesomeIcon icon={faQuoteRight} style={{ color: "#f78528" }} size="xl" />
+					</p>
+					<span className="fs-5">
+						{quotes.character} - <span className="orange archive-sm">{quotes.title}</span>
 					</span>
 				</Col>
 			</Row>

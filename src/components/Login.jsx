@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
@@ -47,7 +46,7 @@ const Login = ({ handleCloseLog, show }) => {
 					</Form.Group>
 					<div className="d-flex justify-content-end">
 						<button className="orange archive-sm border-orange" type="submit">
-							Accedi
+							ACCEDI
 						</button>
 					</div>
 				</Form>

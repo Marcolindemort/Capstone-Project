@@ -1,7 +1,7 @@
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button, Col, Dropdown, DropdownButton, Form, InputGroup, OverlayTrigger, Popover, Row } from "react-bootstrap";
+import { Col, Dropdown, DropdownButton, Form, InputGroup, OverlayTrigger, Popover, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getDeveloper, getGames, getGenre, getReleasedDate, setQuery } from "../redux/actions/actions";
@@ -87,8 +87,8 @@ const Searchbar = () => {
 					</InputGroup>
 				</Col>
 				<Col xs={0} lg={3} className="d-flex justify-content-center align-items-center">
-					<Link to="/" className="orange">
-						<FontAwesomeIcon icon={faHouse} size="xl" className="me-5" />
+					<Link to="/" className="orange me-3">
+						<FontAwesomeIcon icon={faHouse} size="xl" />
 					</Link>
 					<OverlayTrigger
 						trigger="click"
@@ -106,8 +106,9 @@ const Searchbar = () => {
 									</button>
 								</Popover.Body>
 							</Popover>
-						}>
-						<FontAwesomeIcon icon={faUser} size="xl" className="orange pointer" />
+						}
+						rootClose={true}>
+						<FontAwesomeIcon icon={faUser} size="xl" className="orange pointer ms-3" />
 					</OverlayTrigger>
 				</Col>
 			</Row>

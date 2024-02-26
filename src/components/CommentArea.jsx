@@ -69,7 +69,7 @@ const CommentArea = () => {
 						))}
 				</div>
 				<Row className="justify-content-center my-5">
-					<Col xs={6}>
+					<Col xs={10} md={8} lg={6}>
 						<InputGroup>
 							<Form.Control
 								as="textarea"

@@ -72,6 +72,15 @@ body {
 	border-radius: 50px;
 }
 
+.border-pic-orange {
+	border: solid #f78528 3px;
+}
+
+.border-pic2-orange {
+	border: solid #f78528 3px;
+	border-left: unset;
+}
+
 .carousel-img {
 	width: 100%;
 	object-fit: contain;
@@ -96,9 +105,35 @@ button {
 		-1px 1px black;
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
 	.bg-md-dark {
 		background-color: #212529;
 		color: #ffffff;
 	}
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #f78528;
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #d66100;
+}
+
+.scroll-container {
+	max-height: 373px;
+	overflow-y: auto;
+}
+
+textarea {
+	width: 100%;
 }
