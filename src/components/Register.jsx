@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
@@ -17,7 +16,6 @@ const Register = ({ handleCloseReg, show }) => {
 		const setId = Math.floor(Math.random() * 1000);
 		const regUser = { id: setId, username, email, password };
 		console.log(regUser);
-
 		dispatch(register(regUser));
 		handleCloseReg();
 	};

@@ -8,27 +8,9 @@
     },
     {
       "id": "781",
-      "username": "prova",
+      "username": "admin",
       "email": "prova@gmail.com",
-      "password": "prova"
-    },
-    {
-      "id": "839",
-      "username": "redux",
-      "email": "redux@gmail.com",
-      "password": "redux"
-    },
-    {
-      "id": "316",
-      "username": "prova2",
-      "email": "prova@gmail.it",
-      "password": "test"
-    },
-    {
-      "id": "177",
-      "username": "provaredux",
-      "email": "prova@gmail.com",
-      "password": "test"
+      "password": "admin"
     }
   ],
   "reviews": [
@@ -43,7 +25,7 @@
     {
       "id": "6768",
       "gameid": 29593,
-      "user": "prova",
+      "user": "admin",
       "userid": "781",
       "review": "questa recensione è inutile per ora o forse ancora sì",
       "vote": 8

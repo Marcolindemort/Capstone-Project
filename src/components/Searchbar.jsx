@@ -48,7 +48,7 @@ const Searchbar = () => {
 					dispatch(setQuery(inputValue));
 					dispatch(getDeveloper());
 					break;
-				case "Data d'uscita":
+				case "Anno d'uscita":
 					dispatch(setQuery(inputValue));
 					dispatch(getReleasedDate());
 					break;
@@ -66,11 +66,11 @@ const Searchbar = () => {
 			<Row className="justify-content-end">
 				<Col xs={11} lg={6}>
 					<InputGroup className="my-3 me-3 d-flex justify-content-center">
-						<DropdownButton variant="dark" title={filterBy} id="input-group-dropdown-1" className="border-orange">
+						<DropdownButton variant="dark" title={filterBy} id="input-group-dropdown-1">
 							<Dropdown.Item onClick={() => setFilterBy("Titolo")}>Titolo</Dropdown.Item>
 							<Dropdown.Item onClick={() => setFilterBy("Genere")}>Genere</Dropdown.Item>
 							<Dropdown.Item onClick={() => setFilterBy("Sviluppatore")}>Sviluppatore</Dropdown.Item>
-							<Dropdown.Item onClick={() => setFilterBy("Data d'uscita")}>Data d'uscita</Dropdown.Item>
+							<Dropdown.Item onClick={() => setFilterBy("Anno d'uscita")}>Anno d'uscita</Dropdown.Item>
 						</DropdownButton>
 						<Form onSubmit={handleSearch} className="m-0 d-flex">
 							<Form.Control
@@ -112,7 +112,7 @@ const Searchbar = () => {
 					</OverlayTrigger>
 				</Col>
 			</Row>
-			<Login handleCloseLog={handleCloseLog} show={showLog} />
+			<Login handleCloseLog={handleCloseLog} showLog={showLog} />
 			<Register handleCloseReg={handleCloseReg} show={showReg} />
 		</>
 	);

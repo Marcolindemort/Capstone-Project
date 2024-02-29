@@ -154,14 +154,12 @@ export const register = (regUser) => {
 			.then((resp) => {
 				return resp.json();
 			})
-			.then((response) => {
-				if (response.ok) {
-					dispatch({
-						type: SET_REGISTER,
-						payload: response,
-					});
-					console.log("registrazione effettuata");
-				}
+			.then((userData) => {
+				dispatch({
+					type: SET_REGISTER,
+					payload: userData,
+				});
+				console.log("registrazione effettuata");
 			})
 			.catch((error) => {
 				console.log(error);

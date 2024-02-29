@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleComment from "./SingleComment";
-import { Button, Col, Form, InputGroup, Row } from "react-bootstrap";
+import { Button, Col, Dropdown, DropdownButton, Form, InputGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const CommentArea = () => {
@@ -33,6 +33,10 @@ const CommentArea = () => {
 			.catch((error) => {
 				console.log(error);
 			});
+	};
+
+	const handleVoteChange = (selectedVote) => {
+		setVote(selectedVote);
 	};
 
 	const fetchComments = async () => {
@@ -81,13 +85,13 @@ const CommentArea = () => {
 							/>
 							<div className="d-flex align-items-center">
 								<span className="me-2 ms-3">Voto:</span>
-								<select value={vote} onChange={(e) => setVote(parseInt(e.target.value))}>
+								<DropdownButton title={vote} variant="light" onSelect={handleVoteChange}>
 									{[...Array(10)].map((params, index) => (
-										<option key={index + 1} value={index + 1}>
+										<Dropdown.Item key={index + 1} eventKey={index + 1} className="item">
 											{index + 1}
-										</option>
+										</Dropdown.Item>
 									))}
-								</select>
+								</DropdownButton>
 							</div>
 						</InputGroup>
 						{!user ? (

@@ -38,7 +38,7 @@ const GameDetails = () => {
 							<Tab eventKey="info" title="INFO" className="text-start">
 								<Container>
 									<Row>
-										<Col xs={6} className="p-3">
+										<Col xs={6} className="py-3 ps-4">
 											<p>
 												<span className="fst-italic fw-bold orange">Titolo: </span>
 												{game.name}
@@ -57,14 +57,14 @@ const GameDetails = () => {
 											{game.esrb_rating && (
 												<p className="fst-italic fw-bold orange">
 													Rating ESRB:
-													<span> {game.esrb_rating.name} </span>
+													<span className="white fw-normal fst-normal"> {game.esrb_rating.name} </span>
 												</p>
 											)}
 											<p>
 												<span className="fst-italic fw-bold orange">Media voti Metacritic: </span>
 												{game.metacritic}
 											</p>
-											<div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center">
+											<div className="d-flex flex-column align-items-start">
 												<p className="fst-italic fw-bold orange justify-content-start flex-start m-0">
 													Disponibile per:&nbsp;
 												</p>
@@ -75,7 +75,7 @@ const GameDetails = () => {
 											</div>
 										</Col>
 
-										<Col xs={6} className="p-3">
+										<Col xs={6} className="py-3 ps-4">
 											<p>
 												<span className="fst-italic fw-bold orange">Data di uscita: </span>
 												<br className="d-lg-none"></br>
@@ -134,16 +134,11 @@ const GameDetails = () => {
 export default GameDetails;
 
 /* piattaforme V
-data di uscita - invertire data
+data di uscita V
 metacritic V
 genere V
 tag(?)
 descrizione V
 screenshot V
 trailer
-achievement V
-edizioni(?) 
-
-
-aspect-ratio
-object-fit*/
+achievement V */

@@ -14,7 +14,7 @@ body {
 	background-image: url(./media/background.png);
 	background-blend-mode: multiply;
 	background-position: center;
-	background-size: cover;
+	background-size: 100%;
 }
 
 .content-slide {
@@ -53,6 +53,10 @@ body {
 	color: #f78528;
 }
 
+.bg-orange {
+	background-color: #f78528;
+}
+
 .archive {
 	font-family: "Press Start 2P", system-ui;
 }
@@ -64,12 +68,12 @@ body {
 
 .border-orange {
 	border: solid #f78528 3px;
-	border-radius: 100px;
+	border-radius: 40px;
 }
 
 .border-card-orange {
 	border: solid #f78528 3px;
-	border-radius: 50px;
+	border-radius: 20px;
 }
 
 .border-pic-orange {
@@ -136,4 +140,26 @@ button {
 
 textarea {
 	width: 100%;
+}
+
+.nav-tabs .nav-link {
+	color: #f78528;
+}
+
+.dropdown-item:hover {
+	background-color: #f78528;
+}
+
+.dropdown-menu.show {
+	min-width: inherit;
+	display: inline-block;
+}
+
+.active-trophy img {
+	filter: grayscale(100%);
+}
+
+.active-trophy span {
+	text-decoration-line: line-through;
+	color: black;
 }
