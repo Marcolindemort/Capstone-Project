@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import SingleComment from "./SingleComment";
-import { Button, Col, Dropdown, DropdownButton, Form, InputGroup, Row } from "react-bootstrap";
+import { Col, Dropdown, DropdownButton, Form, InputGroup, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 
 const CommentArea = () => {
@@ -25,13 +25,12 @@ const CommentArea = () => {
 				return resp.json();
 			})
 			.then(() => {
-				console.log("recensione inviata");
 				setNewComment("");
 				setVote(5);
 				fetchComments();
 			})
 			.catch((error) => {
-				console.log(error);
+				console.error(error);
 			});
 	};
 
@@ -43,14 +42,12 @@ const CommentArea = () => {
 		try {
 			const response = await fetch("http://localhost:8000/reviews/?gameid=" + gameid);
 			if (!response.ok) {
-				throw "Errore nella fetch";
+				throw new Error("Errore nella fetch");
 			}
 			const comments = await response.json();
 			setComments(comments);
-			console.log("comments", comments);
-			console.log("commenti caricati");
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 

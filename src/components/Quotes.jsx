@@ -10,13 +10,12 @@ const Quotes = () => {
 		try {
 			const response = await fetch("https://thingproxy.freeboard.io/fetch/https://ultima.rest/api/random");
 			if (!response.ok) {
-				throw "Errore nella fetch";
+				throw new Error("Errore nella fetch");
 			}
 			const randomQuotes = await response.json();
 			setQuotes(randomQuotes);
-			console.log(randomQuotes);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 
@@ -28,7 +27,7 @@ const Quotes = () => {
 		<Container>
 			<Row className="justify-content-center">
 				<Col xs={10}>
-					<p className="m-0 fs-3 fst-italic">
+					<p className="m-0 fs-4 fst-italic">
 						<FontAwesomeIcon icon={faQuoteLeft} style={{ color: "#f78528" }} size="xl" />
 						&nbsp;{quotes.quote}&nbsp;
 						<FontAwesomeIcon icon={faQuoteRight} style={{ color: "#f78528" }} size="xl" />

@@ -132,13 +132,3 @@ const GameDetails = () => {
 };
 
 export default GameDetails;
-
-/* piattaforme V
-data di uscita V
-metacritic V
-genere V
-tag(?)
-descrizione V
-screenshot V
-trailer
-achievement V */

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getGames, resetGames, setQuery } from "../redux/actions/actions";
 import { Link, useLocation } from "react-router-dom";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 
 const Slider = () => {
 	const games = useSelector((state) => state.games.collection.results);

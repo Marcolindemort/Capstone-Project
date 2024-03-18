@@ -1,4 +1,4 @@
-import { Button, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { useState } from "react";
 import profilo from "../media/profilo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,8 +7,6 @@ import { faBan, faFloppyDisk, faPencil, faTrashCan } from "@fortawesome/free-sol
 const SingleComment = ({ comment, user, fetchComments }) => {
 	const [editedComment, setEditedComment] = useState(comment.review);
 	const [isEditing, setIsEditing] = useState(false);
-
-	console.log("commenti", comment);
 
 	const handleEdit = () => {
 		const updatedComment = { ...comment, review: editedComment };
@@ -20,12 +18,11 @@ const SingleComment = ({ comment, user, fetchComments }) => {
 		})
 			.then((resp) => resp.json())
 			.then((e) => {
-				console.log("Commento modificato:", updatedComment);
 				setIsEditing(false);
 				fetchComments();
 				setEditedComment(e.target.value);
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => console.error(error));
 	};
 
 	const handleDelete = () => {
@@ -33,10 +30,9 @@ const SingleComment = ({ comment, user, fetchComments }) => {
 			method: "DELETE",
 		})
 			.then(() => {
-				console.log("Commento eliminato:", comment.id);
 				fetchComments();
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => console.error(error));
 	};
 
 	return (

@@ -11,9 +11,8 @@ const ScreenshotCarousel = ({ gameId }) => {
 			);
 			const screen = await response.json();
 			setScreenshot(screen.results);
-			console.log("screen", screenshot, "id", gameId);
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 

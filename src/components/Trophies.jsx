@@ -14,7 +14,7 @@ const Trophies = ({ gameId }) => {
 			setTrophies(trophy);
 			setActiveTrophies(Array(trophy.results.length).fill(false));
 		} catch (error) {
-			console.log(error);
+			console.error(error);
 		}
 	};
 

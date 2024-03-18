@@ -19,7 +19,7 @@ const Login = ({ handleCloseLog, showLog }) => {
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		dispatch(login(username, password));
-		if (username === "admin" && password === "admin") {
+		if (username && password) {
 			setShowSuccess(true);
 		} else {
 			setShowDanger(true);
