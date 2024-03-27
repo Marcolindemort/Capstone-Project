@@ -9,7 +9,7 @@ const Login = ({ handleCloseLog, showLog }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 
-	const loggedUser = useSelector((state) => state.account.loggedInUser);
+	/* const loggedUser = useSelector((state) => state.account.loggedInUser); */
 
 	const [showSuccess, setShowSuccess] = useState(false);
 	const [showDanger, setShowDanger] = useState(false);
@@ -18,9 +18,9 @@ const Login = ({ handleCloseLog, showLog }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		dispatch(login(username, password));
 		if (username === "admin" && password === "admin") {
 			setShowSuccess(true);
+			dispatch(login(username, password));
 		} else {
 			setShowDanger(true);
 		}
