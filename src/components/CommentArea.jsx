@@ -14,7 +14,6 @@ const CommentArea = () => {
 	const handleComment = () => {
 		if (!newComment) return;
 		const commentReview = { gameid, user: user.username, userid: user.id, review: newComment, vote };
-		console.log(commentReview);
 
 		fetch("http://localhost:8000/reviews", {
 			method: "POST",
@@ -56,8 +55,6 @@ const CommentArea = () => {
 			fetchComments();
 		}
 	}, [gameid]);
-
-	console.log("user", user);
 
 	return (
 		<>
