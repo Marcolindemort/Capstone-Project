@@ -115,45 +115,49 @@ export const getGamesDetails = (slug) => {
 };
 
 export const login = (username, password) => {
-	return (dispatch) => {
-		fetch("http://localhost:8000/users/?username=" + username)
-			.then((response) => {
-				return response.json();
-			})
-			.then((data) => {
-				if (data.length > 0 && data.find((user) => user.username === username && user.password === password)) {
-					dispatch({
-						type: SET_LOGIN,
-						payload: data,
-					});
-				} else {
-					console.error("errore");
-				}
-			})
-			.catch((error) => {
-				console.error(error);
-			});
+	return async (dispatch) => {
+		try {
+			const response = await fetch(`http://localhost:8000/users?username=${username}&password=${password}`);
+			if (!response.ok) {
+				throw new Error("Errore di rete");
+			}
+			const data = await response.json();
+			if (data.length > 0) {
+				const token = `${Date.now()}`;
+
+				dispatch({
+					type: SET_LOGIN,
+					payload: { user: data[0], token },
+				});
+				return Promise.resolve();
+			} else {
+				throw new Error("Credenziali non valide");
+			}
+		} catch (error) {
+			console.error(error);
+			return Promise.reject(error);
+		}
 	};
 };
 
 export const register = (regUser) => {
-	return (dispatch) => {
-		fetch("http://localhost:8000/users", {
-			method: "POST",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(regUser),
-		})
-			.then((resp) => {
-				return resp.json();
-			})
-			.then((userData) => {
-				dispatch({
-					type: SET_REGISTER,
-					payload: userData,
-				});
-			})
-			.catch((error) => {
-				console.error(error);
+	return async (dispatch) => {
+		try {
+			const response = await fetch("http://localhost:8000/users", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(regUser),
 			});
+			if (!response.ok) {
+				throw new Error("Errore durante la registrazione");
+			}
+			const userData = await response.json();
+			dispatch({
+				type: SET_REGISTER,
+				payload: userData,
+			});
+		} catch (error) {
+			console.error(error);
+		}
 	};
 };

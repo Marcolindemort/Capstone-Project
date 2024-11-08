@@ -5,31 +5,7 @@
 			"username": "marco",
 			"email": "provamail@gmail.com",
 			"password": "prova"
-		},
-		{
-			"id": "781",
-			"username": "admin",
-			"email": "prova@gmail.com",
-			"password": "admin"
 		}
 	],
-	"reviews": [
-		{
-			"id": "494c",
-			"gameid": 29593,
-			"user": "marco",
-			"userid": "87",
-			"review": "recensione di un altro utente",
-			"vote": 5
-		},
-		{
-			"id": "b882",
-			"gameid": 52943,
-			"user": "marco",
-			"userid": "87",
-			"review": "Titolo che ha fatto la storia del medium, da giocare assolutamente!",
-			"vote": "9"
-		}
-	],
-	"favorites": []
+	"reviews": []
 }

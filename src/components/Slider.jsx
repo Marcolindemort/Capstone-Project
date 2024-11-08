@@ -51,6 +51,7 @@ const Slider = () => {
 											className="rounded-3 border-orange"
 											width={"100%"}
 											style={{ aspectRatio: "1/0.6", objectFit: "cover" }}
+											loading="lazy"
 										/>
 										<Col className="d-none d-lg-block">
 											<p className="fw-bold orange archive-sm shadow">{game.name}</p>

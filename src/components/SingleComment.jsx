@@ -1,8 +1,8 @@
-import { Col, Row } from "react-bootstrap";
-import { useState } from "react";
-import profilo from "../media/profilo.png";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBan, faFloppyDisk, faPencil, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import profilo from "../media/profilo.png";
 
 const SingleComment = ({ comment, user, fetchComments }) => {
 	const [editedComment, setEditedComment] = useState(comment.review);

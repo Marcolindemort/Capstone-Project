@@ -2,7 +2,8 @@ import { SET_LOGIN, SET_REGISTER } from "../actions/actions";
 
 const initialState = {
 	loggedInUser: null,
-	registeredUser: [],
+	token: null,
+	registeredUsers: [],
 };
 
 export const userReducer = (state = initialState, action) => {
@@ -10,13 +11,16 @@ export const userReducer = (state = initialState, action) => {
 		case SET_LOGIN:
 			return {
 				...state,
-				loggedInUser: action.payload.length > 0 ? action.payload[0] : null,
+				loggedInUser: action.payload.user,
+				token: action.payload.token,
 			};
+
 		case SET_REGISTER:
 			return {
 				...state,
-				registeredUser: action.payload,
+				registeredUsers: [...state.registeredUsers, action.payload],
 			};
+
 		default:
 			return state;
 	}

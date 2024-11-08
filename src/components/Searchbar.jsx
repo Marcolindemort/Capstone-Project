@@ -2,7 +2,7 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Col, Dropdown, DropdownButton, Form, InputGroup, OverlayTrigger, Popover, Row } from "react-bootstrap";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { getDeveloper, getGames, getGenre, getReleasedDate, setQuery } from "../redux/actions/actions";
 import { useState } from "react";
@@ -10,6 +10,8 @@ import Login from "./Login";
 import Register from "./Register";
 
 const Searchbar = () => {
+	const user = useSelector((state) => state.account.loggedInUser);
+
 	const dispatch = useDispatch();
 
 	const navigate = useNavigate();
@@ -86,30 +88,33 @@ const Searchbar = () => {
 						</Form>
 					</InputGroup>
 				</Col>
-				<Col xs={0} lg={3} className="d-flex justify-content-center align-items-center">
-					<Link to="/" className="orange me-3">
-						<FontAwesomeIcon icon={faHouse} size="xl" />
-					</Link>
-					<OverlayTrigger
-						trigger="click"
-						key="bottom"
-						placement="bottom"
-						overlay={
-							<Popover id="popover-positioned-bottom">
-								<Popover.Body>
-									<button className="orange archive-sm border-orange mb-3" onClick={handleShowLog}>
-										ACCEDI
-									</button>
-									<br></br>
-									<button className="orange archive-sm border-orange" onClick={handleShowReg}>
-										REGISTRATI
-									</button>
-								</Popover.Body>
-							</Popover>
-						}
-						rootClose={true}>
-						<FontAwesomeIcon icon={faUser} size="xl" className="orange pointer ms-3" />
-					</OverlayTrigger>
+				<Col xs={0} lg={3} className="d-flex flex-column-reverse justify-content-center align-items-center mt-4">
+					<div className="mt-1">{user && <span>Benvenuto, {user.username}!</span>}</div>
+					<div>
+						<Link to="/" className="orange me-3">
+							<FontAwesomeIcon icon={faHouse} size="xl" />
+						</Link>
+						<OverlayTrigger
+							trigger="click"
+							key="bottom"
+							placement="bottom"
+							overlay={
+								<Popover id="popover-positioned-bottom">
+									<Popover.Body>
+										<button className="orange archive-sm border-orange mb-3" onClick={handleShowLog}>
+											ACCEDI
+										</button>
+										<br></br>
+										<button className="orange archive-sm border-orange" onClick={handleShowReg}>
+											REGISTRATI
+										</button>
+									</Popover.Body>
+								</Popover>
+							}
+							rootClose={true}>
+							<FontAwesomeIcon icon={faUser} size="xl" className="orange pointer ms-3" />
+						</OverlayTrigger>
+					</div>
 				</Col>
 			</Row>
 			<Login handleCloseLog={handleCloseLog} showLog={showLog} />

@@ -1,15 +1,13 @@
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../redux/actions/actions";
 import { Toast, ToastContainer } from "react-bootstrap";
 
 const Login = ({ handleCloseLog, showLog }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
-
-	/* const loggedUser = useSelector((state) => state.account.loggedInUser); */
 
 	const [showSuccess, setShowSuccess] = useState(false);
 	const [showDanger, setShowDanger] = useState(false);
@@ -18,15 +16,17 @@ const Login = ({ handleCloseLog, showLog }) => {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (username === "admin" && password === "admin") {
-			setShowSuccess(true);
-			dispatch(login(username, password));
-		} else {
-			setShowDanger(true);
-		}
-		handleCloseLog();
+		dispatch(login(username, password))
+			.then(() => {
+				setShowSuccess(true);
+			})
+			.catch((error) => {
+				console.error(error);
+				setShowDanger(true);
+			});
 		setUsername("");
 		setPassword("");
+		handleCloseLog();
 	};
 
 	return (
@@ -47,8 +47,6 @@ const Login = ({ handleCloseLog, showLog }) => {
 								autoFocus
 								required
 							/>
-						</Form.Group>
-						<Form.Group className="mb-3">
 							<Form.Label>Password</Form.Label>
 							<Form.Control
 								value={password}
