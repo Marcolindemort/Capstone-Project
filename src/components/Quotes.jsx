@@ -1,10 +1,10 @@
 import { faQuoteLeft, faQuoteRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
+//import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 const Quotes = () => {
-	const [quotes, setQuotes] = useState([]);
+	/*const [quotes, setQuotes] = useState([]);
 
 	const getQuotes = async () => {
 		try {
@@ -21,7 +21,7 @@ const Quotes = () => {
 
 	useEffect(() => {
 		getQuotes();
-	}, []);
+	}, []);*/
 
 	return (
 		<Container>
@@ -29,11 +29,12 @@ const Quotes = () => {
 				<Col xs={10}>
 					<p className="m-0 fs-4 fst-italic">
 						<FontAwesomeIcon icon={faQuoteLeft} style={{ color: "#f78528" }} size="xl" />
-						&nbsp;{quotes.quote}&nbsp;
+						{/* API di terze parti dedicata alle citazioni randomiche non più funzionante poiché a pagamento*/}
+						&nbsp;This is gonna be weirder than usual.&nbsp;
 						<FontAwesomeIcon icon={faQuoteRight} style={{ color: "#f78528" }} size="xl" />
 					</p>
 					<span className="fs-5">
-						{quotes.character} - <span className="orange archive-sm">{quotes.title}</span>
+						Jesse Faden - <span className="orange archive-sm">Control</span>
 					</span>
 				</Col>
 			</Row>

@@ -1,11 +1,4 @@
 {
-	"users": [
-		{
-			"id": "87",
-			"username": "marco",
-			"email": "provamail@gmail.com",
-			"password": "prova"
-		}
-	],
+	"users": [],
 	"reviews": []
 }
