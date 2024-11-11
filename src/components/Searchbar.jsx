@@ -89,7 +89,7 @@ const Searchbar = () => {
 					</InputGroup>
 				</Col>
 				<Col xs={0} lg={3} className="d-flex flex-column-reverse justify-content-center align-items-center mt-4">
-					<div className="mt-1">{user && <span>Benvenuto, {user.username}!</span>}</div>
+					<div className="mt-1">{user && <span>Benvenuto/a, {user.username}!</span>}</div>
 					<div>
 						<Link to="/" className="orange me-3">
 							<FontAwesomeIcon icon={faHouse} size="xl" />
