@@ -2,7 +2,7 @@ Videogames Archive è un archivio di videogiochi creato come progetto capstone d
 
 Funzionalità principali:
 - Registrazione utente (tramite json-server e json-server-auth).
-- Esplorazione dei videogiochi: gli utenti possono esplorare, effetuare ricerche filtrate e visualizzare i dettagli di migliaia di titoli grazie ai dati forniti dalla API di RAWG.
+- Esplorazione dei videogiochi: gli utenti possono esplorare, effettuare ricerche filtrate e visualizzare i dettagli di migliaia di titoli grazie ai dati forniti dalla API di RAWG.
 - Gestione dei commenti: gli utenti possono pubblicare, modificare, visualizzare e cancellare commenti sui giochi, eseguendo operazioni CRUD complete.
 
 Per avviare l'applicazione:
